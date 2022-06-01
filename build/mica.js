@@ -34,7 +34,7 @@ class Mica{
 		}
 	}
 
-	addwindow(w=new MicaWindow()){
+	addWindow(w=new MicaWindow()){
 		this.windows.splice(0,0,w); // insert window at beggining
 		this.focusWindow();
 	}

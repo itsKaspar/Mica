@@ -1,4 +1,12 @@
-# Mica Windows
+# Mica
+
+Mica is a window management system designed for artistic research, practice, performance and presentation of various artworks.
+It brings the basic concepts of windows to the web, letting users open, display, move, resize and close windows.
+
+While implementing the standard use cases of windows, Mica is also designed to be adaptable for critical interfaces.
+More of this can be found in the examples
+
+## What is a window ?
 
 - A window is something to look through
 - A window is the frontier between the inside and the outside
@@ -6,14 +14,16 @@
 - A window can be opened and closed
 - Sometimes people throw themselves out of them
 
+## Dependencies
+
+Mica was built using p5.js, a creative coding library
 
 ## Usage
 
-This library is constructed for use with p5.js, a simple lightweight creative coding javascript library.
 To include it in your project add this script line to the top of your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/itsKaspar/p5.Windoxs@master/build/mica.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itsKaspar/Mica@master/build/mica.min.js"></script>
 ```
 
 and then create a new window like this
@@ -37,4 +47,11 @@ let options = {
   w = 400; // width
   h = 400; // height
 }
+```
+
+To make the windows interactive you need to link them with the p5.js event system like so
+```js
+function mousePressed(){ mica.mousePressed(); }
+function mouseReleased(){ mica.mouseReleased(); }
+function mouseDragged(){ mica.mouseDragged(); }
 ```

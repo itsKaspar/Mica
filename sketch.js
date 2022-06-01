@@ -1,13 +1,3 @@
-
-// function setup() {
-//   createCanvas(500,500);
-//   let test = new Something();
-// }
-//
-// function draw() {
-//   background('red');
-// }
-
 let mica = new Mica();
 let font;
 let points = [];
@@ -20,7 +10,7 @@ function setup() {
   textFont(font);
 	createCanvas(600, 600);
 	for(let i = 0; i < 1; i++){
-		mica.addWindox();
+		mica.addWindow();
 	}
 }
 
@@ -37,18 +27,9 @@ function draw() {
       let v = createVector(random(width), random(height));
       let n = noise(v.x/150, v.y/150);
       if(n > random()){
-          //points.push(v);
           circle(v.x, v.y,1);
       }
     }
-
-
-
-
-
-
-
-
 }
 
 function mousePressed(){ mica.mousePressed(); }
