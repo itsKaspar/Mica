@@ -1,2 +1,2 @@
 # p5.Windoxs
-P5 Window Manager
+P5 Windox Manager
