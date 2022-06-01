@@ -1,2 +1,2 @@
-# p5.Windoxs
-P5 Windox Manager
+# p5 Windoxs
+Window Manager for p5.js

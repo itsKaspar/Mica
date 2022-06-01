@@ -1,0 +1,28 @@
+{
+  "name": "base-p5",
+  "version": "1.0.0",
+  "description": "Basic p5.js Project Constructor",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "browserify main.js > build/windox.js",
+    "postbuild": "terser build/windox.js -cm -o build/windox.min.js",
+    "server": "python -m http.server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsKaspar/p5.Windoxs.git"
+  },
+  "author": "Kaspar Ravel <kaspar.ravel@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/itsKaspar/p5.Windoxs/issues"
+  },
+  "homepage": "https://github.com/itsKaspar/p5.Windoxs#readme",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "terser": "^5.14.0"
+  }
+}

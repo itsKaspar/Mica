@@ -1,0 +1,37 @@
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	border:0;
+	width:100%;
+  scrollbar-width: thin;
+	overflow: hidden;
+}
+
+body{
+	background-color:#f1f1f1;
+}
+
+canvas, #right{
+  position:absolute;
+  display:block;
+  height:600px;
+  width: 600px;
+  top: calc( ( 1 * ( 50vh - (600px / 2) ) ) );
+}
+
+canvas{
+  right:50vw;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+}
+
+#right{
+  left:50vw;
+  overflow-y: scroll;
+}
+
+zero-md{
+  position:absolute;
+  display:block;
+  padding-left:20px;
+}
