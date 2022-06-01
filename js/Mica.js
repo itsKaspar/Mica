@@ -1,17 +1,17 @@
-class Ox{
+class Mica{
 	constructor(){
-		this.windoxs = [];
+		this.windows = [];
 	}
 
 	draw(){
-		for(let i = this.windoxs.length - 1; i >= 0; i--){
-			this.windoxs[i].draw();
+		for(let i = this.windows.length - 1; i >= 0; i--){
+			this.windows[i].draw();
 		}
 	}
 
 	mousePressed(){
-		for(let i = 0; i < this.windoxs.length; i++){
-			if(this.windoxs[i].mousePressed()){ // if a window was closed or moved
+		for(let i = 0; i < this.windows.length; i++){
+			if(this.windows[i].mousePressed()){ // if a window was closed or moved
 				break;
 			}
 		}
@@ -19,38 +19,38 @@ class Ox{
 	}
 
 	mouseReleased(){
-		for(let i = 0; i < this.windoxs.length; i++){
-			this.windoxs[i].mouseReleased();
+		for(let i = 0; i < this.windows.length; i++){
+			this.windows[i].mouseReleased();
 		}
-		this.removeWindoxs(); // clean up windows
+		this.removewindows(); // clean up windows
 	}
 
 	mouseDragged(){
-		for(let i = 0; i < this.windoxs.length; i++){
-			if(this.windoxs[i].mouseDragged()){ // if a window is being moved
+		for(let i = 0; i < this.windows.length; i++){
+			if(this.windows[i].mouseDragged()){ // if a window is being moved
 				break;
 			}
 		}
 	}
 
-	addWindox(w=new Windox()){
-		this.windoxs.splice(0,0,w); // insert window at beggining
+	addwindow(w=new MicaWindow()){
+		this.windows.splice(0,0,w); // insert window at beggining
 		this.focusWindow();
 	}
 
-	removeWindoxs(i){
-		for(let i = 0; i < this.windoxs.length; i++){
-			if(this.windoxs[i].display == false){
-				this.windoxs.splice(i,1);
+	removewindows(i){
+		for(let i = 0; i < this.windows.length; i++){
+			if(this.windows[i].display == false){
+				this.windows.splice(i,1);
 			}
 		}
 	}
 
 	clickWindow(){
-		for(let i = 0; i < this.windoxs.length; i++){ // in order of appearance check if clicked
-				if(this.windoxs[i].isMouseOnWindow()){
-					let w = this.windoxs.splice(i,1)[0]; // remove window from stack
-					this.windoxs.splice(0,0,w); // reinsert element at beginning
+		for(let i = 0; i < this.windows.length; i++){ // in order of appearance check if clicked
+				if(this.windows[i].isMouseOnWindow()){
+					let w = this.windows.splice(i,1)[0]; // remove window from stack
+					this.windows.splice(0,0,w); // reinsert element at beginning
 					this.focusWindow();
 					break;
 				}
@@ -58,14 +58,14 @@ class Ox{
 		}
 
 	focusWindow(){
-		for(let i = 0; i < this.windoxs.length; i++){
-				this.windoxs[i].setFocus(false); // unset focus on all other windows
+		for(let i = 0; i < this.windows.length; i++){
+				this.windows[i].setFocus(false); // unset focus on all other windows
 		}
-		this.windoxs[0].setFocus(true); // set focus on window
+		this.windows[0].setFocus(true); // set focus on window
 	}
 }
 
-class Windox{
+class MicaWindow{
 	constructor(o){
 
 		// # Size and Position
@@ -281,5 +281,5 @@ function drawCross(cx, cy, w){
 	line(cx - w, cy - w, cx + w, cy + w); //ascending line
 }
 
-if(typeof window !== 'undefined') window.Ox = Ox; // export for window
-module.exports = Ox; // and export for module
+if(typeof window !== 'undefined') window.Mica = Mica; // export for window
+module.exports = Mica; // and export for module

@@ -8,7 +8,7 @@
 //   background('red');
 // }
 
-let ox = new Ox();
+let mica = new Mica();
 let font;
 let points = [];
 
@@ -20,7 +20,7 @@ function setup() {
   textFont(font);
 	createCanvas(600, 600);
 	for(let i = 0; i < 1; i++){
-		ox.addWindox();
+		mica.addWindox();
 	}
 }
 
@@ -28,7 +28,7 @@ function draw() {
 	//background(255);
   if(frameCount == 1){
     background('#4D4C7D');
-    ox.draw();
+    mica.draw();
   }
 
   noStroke();
@@ -51,6 +51,6 @@ function draw() {
 
 }
 
-function mousePressed(){ ox.mousePressed(); }
-function mouseReleased(){ ox.mouseReleased(); }
-function mouseDragged(){ ox.mouseDragged(); }
+function mousePressed(){ mica.mousePressed(); }
+function mouseReleased(){ mica.mouseReleased(); }
+function mouseDragged(){ mica.mouseDragged(); }

@@ -1,8 +1,8 @@
 // Maths
-const Ox = require('./js/Ox.js');
+const Mica = require('./js/Mica.js');
 
 const modules = {
-  Ox
+  Mica
 }
 
 if(typeof window !== 'undefined') window.base = modules; // would change Q to the name of the library
